@@ -1,5 +1,6 @@
 # Data quality
 
+## Flow
 ```mermaid
 graph TD;
     A[Configure variables] --> B[Read SQL database];
@@ -10,3 +11,7 @@ graph TD;
     Y --> |Failure| Z[Error alert]; 
     Y --> |Success| D[Save to DuckDB]; 
 ```
+
+## Data Contract
+
+::: app.schema.ProductSchema
