@@ -11,7 +11,7 @@ A project that extracts data from SQL database, validate data extracted, create 
     - Documentation: Mkdocs   
     - Tests: Pytest   
     - CI/CD: Github Actions    
-    - Task automation: Taskipy
+    - Task automation: Taskipy      
     - Output database: PostgreSQL       
     - Input database: Duckdb       
 
