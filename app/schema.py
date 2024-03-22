@@ -3,7 +3,7 @@ from pandera.typing import DataFrame, Series
 
 class ProductSchema(pa.SchemaModel):
     """
-    Define the schema to validate the data of products with Pandera
+    Define the schema to validate the data of products with Pandera.
 
     Attributes:
         id_product (Series[int]): Identificator of the product

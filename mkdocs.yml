@@ -7,3 +7,4 @@ plugins:
   - search
   - mermaid2
   - mkdocstrings
+  
