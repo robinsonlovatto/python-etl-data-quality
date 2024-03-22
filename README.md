@@ -2,9 +2,9 @@
 
 A project that extracts data from SQL database, validate data extracted, create transformations, validate data transformed, save to Duckdb.
 
-Documentation
+## Documentation    
 
-[![image](/pic/flow.png)](https://robinsonlovatto.github.io/python-etl-data-quality/)
+[![image](pic/flow.jpg)](https://robinsonlovatto.github.io/python-etl-data-quality/)
 
 **Main libs/tech:**     
     - Data validation: Pandera     
@@ -12,8 +12,8 @@ Documentation
     - Tests: Pytest   
     - CI/CD: Github Actions    
     - Task automation: Taskipy
-    - Output database: PostgreSQL
-    - Input database: Duckdb
+    - Output database: PostgreSQL       
+    - Input database: Duckdb       
 
 ### Installation
 
@@ -42,8 +42,8 @@ poetry shell
 poetry install
 ```
 
-5. Create the PostgreSQL database (mine was created on render.com) and configure the .env file (as in .env-example).
-   Run the scripts [create table](https://robinsonlovatto.github.io/python-etl-data-quality/sql/create_table_products_bronze.sql) and [insert data](https://robinsonlovatto.github.io/python-etl-data-quality/sql/insert_into_products_bronze.sql) on the database.
+5. Create the PostgreSQL database (mine was created on render.com) and configure the .env file (as in .env-example).        
+   Run the scripts [create table](sql/create_table_products_bronze.sql) and [insert data](sql/insert_into_products_bronze.sql) on the database.
 
 
 6. Run the project:
