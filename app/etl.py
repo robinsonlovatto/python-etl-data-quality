@@ -6,7 +6,7 @@ import pandera as pa
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 
-from schema import ProductSchema
+from schema import ProductSchema, ProductSchemaKPI
 
 
 def load_settings():
@@ -38,6 +38,29 @@ def extract_from_db(query: str) -> pd.DataFrame:
         df_crm = pd.read_sql(query, conn)
 
     return df_crm
+
+@pa.check_input(ProductSchema, lazy=True)
+@pa.check_output(ProductSchemaKPI, lazy=True)
+def transform(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Transforms DataFrame data by applying calculations and normalizations.
+
+    Args:
+        df: Pandas' DataFrame with original data.
+
+    Returns:
+        Pandas' DataFrame after transformations.
+    """
+    # Calcular valor_total_estoque
+    df['stock_total_price'] = df['quantity'] * df['price']
+    
+    # Normalizar categoria para maiúsculas
+    df['normalized_category'] = df['category'].str.lower()
+    
+    # Determinar disponibilidade (True se quantidade > 0)
+    df['availability'] = df['quantity'] > 0
+    
+    return df
 
 if __name__ == "__main__":
 

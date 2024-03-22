@@ -1,6 +1,8 @@
 import pandera as pa
 from pandera.typing import DataFrame, Series
 
+email_regex = r"[^@]+@[^@]+\.[^@]+"
+
 class ProductSchema(pa.SchemaModel):
     """
     Define the schema to validate the data of products with Pandera
@@ -11,12 +13,14 @@ class ProductSchema(pa.SchemaModel):
         quantity (Series[int]): Available quantity of the product, must be between 20 and 200.
         price (Series[float]): Price of the product,  must be between 5.0 and 120.0.
         category (Series[str]): Product's category.
+        email (Series[str]): E-mail associated to the product.
     """
     id_product: Series[int]      
     name: Series[str]
     quantity: Series[int] = pa.Field(ge=20, le=200)
     price: Series[float] = pa.Field(ge=05.0, le=120.0)
     category: Series[str]
+    email = Series[str] = pa.Field(regex=email_regex)
 
     class Config:
         coerce = True
