@@ -7,6 +7,7 @@ import pandera as pa
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 
+sys.path.append('app/')
 from schema import ProductSchema, ProductSchemaKPI
 
 def load_settings():
