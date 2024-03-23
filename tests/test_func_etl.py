@@ -5,6 +5,8 @@ from app.etl import transform
 def test_calculate_stock_total_price():
     # prep
     df = pd.DataFrame({
+        'id_product': [1, 2],
+        'name': ['Product A', 'Product B'],
         'quantity': [10, 5],
         'price': [20.0, 100.0],
         'category': ['toys', 'eletronics']
@@ -20,6 +22,8 @@ def test_calculate_stock_total_price():
 def test_normalized_category():
     # prep
     df = pd.DataFrame({
+        'id_product': [1, 2],
+        'name': ['Product A', 'Product B'],
         'quantity': [1, 2],
         'price': [10.0, 20.0],
         'category': ['toys', 'eletronics']
@@ -35,6 +39,8 @@ def test_normalized_category():
 def test_availability():
     # prep
     df = pd.DataFrame({
+        'id_product': [1, 2],
+        'name': ['Product A', 'Product B'],
         'quantity': [0, 2],
         'price': [10.0, 20.0],
         'category': ['toys', 'eletronics']
